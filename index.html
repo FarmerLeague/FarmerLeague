@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fantalega · Campionato privato di fantacalcio</title>
+<meta name="description" content="Classifica, calendario, rose, giovanili, albo d'oro e il giornale della lega.">
+<meta name="theme-color" content="#191439">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800;900&family=Archivo:wght@400;500;600;700;800&family=Frank+Ruhl+Libre:wght@500;700;900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body>
+
+<header id="intestazione"></header>
+<main id="app"></main>
+<footer id="piede" class="site-footer"></footer>
+
+<!-- 1. Dati: è qui che si inseriscono le informazioni della lega -->
+<script src="assets/js/data/config.js"></script>
+<script src="assets/js/data/teams.js"></script>
+<script src="assets/js/data/fixtures.js"></script>
+<script src="assets/js/data/standings.js"></script>
+<script src="assets/js/data/news.js"></script>
+<script src="assets/js/data/squads.js"></script>
+<script src="assets/js/data/youth.js"></script>
+<script src="assets/js/data/honours.js"></script>
+
+<!-- 2. Strumenti condivisi -->
+<script src="assets/js/lib/dom.js"></script>
+<script src="assets/js/lib/crest.js"></script>
+<script src="assets/js/lib/router.js"></script>
+
+<!-- 3. Componenti -->
+<script src="assets/js/components/blocks.js"></script>
+<script src="assets/js/components/header.js"></script>
+<script src="assets/js/components/footer.js"></script>
+
+<!-- 4. Pagine -->
+<script src="assets/js/pages/home.js"></script>
+<script src="assets/js/pages/classifica.js"></script>
+<script src="assets/js/pages/calendario.js"></script>
+<script src="assets/js/pages/notizie.js"></script>
+<script src="assets/js/pages/articolo.js"></script>
+<script src="assets/js/pages/rose.js"></script>
+<script src="assets/js/pages/giovanili.js"></script>
+<script src="assets/js/pages/albo.js"></script>
+
+<!-- 5. Avvio -->
+<script src="assets/js/app.js"></script>
+</body>
+</html>

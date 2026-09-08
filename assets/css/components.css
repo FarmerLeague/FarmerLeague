@@ -1,0 +1,606 @@
+/* =========================================================
+   FANTALEGA — Componenti riutilizzabili
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   1. Barra scorrevole notizie (ticker)
+   --------------------------------------------------------- */
+.ticker {
+  background: var(--verde);
+  color: #062B18;
+  border-bottom: 2px solid rgba(0, 0, 0, .35);
+  overflow: hidden;
+  position: relative;
+}
+.ticker__nastro {
+  display: flex;
+  width: max-content;
+  animation: scorri 46s linear infinite;
+}
+.ticker:hover .ticker__nastro { animation-play-state: paused; }
+.ticker__gruppo { display: flex; }
+.ticker__voce {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: 7px var(--sp-5);
+  font-size: var(--t-xs);
+  font-weight: 700;
+  letter-spacing: .04em;
+  white-space: nowrap;
+}
+.ticker__voce b {
+  font-family: var(--display);
+  font-size: var(--t-sm);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  background: #062B18;
+  color: var(--verde);
+  padding: 2px 8px;
+  border-radius: 3px;
+}
+.ticker__voce::after {
+  content: "";
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: rgba(6, 43, 24, .45);
+  margin-left: var(--sp-3);
+}
+@keyframes scorri {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ---------------------------------------------------------
+   2. Navbar
+   --------------------------------------------------------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  background: rgba(17, 14, 42, .92);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--linea);
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-5);
+  height: 72px;
+}
+.marchio {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  flex-shrink: 0;
+}
+.marchio__sigla {
+  font-family: var(--display);
+  font-size: 1.55rem;
+  line-height: .85;
+  text-transform: uppercase;
+  letter-spacing: .01em;
+}
+.marchio__sigla span { color: var(--verde); }
+.marchio__sotto {
+  display: block;
+  font-size: 9px;
+  letter-spacing: .28em;
+  color: var(--testo-mute);
+  text-transform: uppercase;
+  margin-top: 3px;
+}
+.marchio svg { width: 34px; height: 40px; }
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin-left: auto;
+}
+.nav-link {
+  position: relative;
+  padding: 10px 13px;
+  font-size: var(--t-sm);
+  font-weight: 600;
+  color: var(--testo-soft);
+  border-radius: var(--r-sm);
+  transition: color .18s ease, background .18s ease;
+}
+.nav-link:hover { color: var(--testo); background: rgba(255, 255, 255, .06); }
+.nav-link.attivo { color: var(--testo); }
+.nav-link.attivo::after {
+  content: "";
+  position: absolute;
+  left: 13px; right: 13px; bottom: 2px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--verde);
+}
+
+.nav-giornata {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  margin-left: var(--sp-4);
+  padding: 7px 14px;
+  border: 1px solid var(--linea-forte);
+  border-radius: var(--r-pill);
+  font-size: var(--t-xs);
+  font-weight: 700;
+  color: var(--testo-soft);
+  white-space: nowrap;
+}
+.nav-giornata i {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--verde);
+  box-shadow: 0 0 0 0 rgba(23, 217, 127, .7);
+  animation: pulsa 2.4s infinite;
+}
+@keyframes pulsa {
+  70%  { box-shadow: 0 0 0 9px rgba(23, 217, 127, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(23, 217, 127, 0); }
+}
+
+.hamburger {
+  display: none;
+  margin-left: auto;
+  width: 44px; height: 44px;
+  background: transparent;
+  border: 1px solid var(--linea-forte);
+  border-radius: var(--r-sm);
+  cursor: pointer;
+}
+.hamburger span {
+  display: block;
+  width: 20px; height: 2px;
+  margin: 4px auto;
+  background: var(--testo);
+  border-radius: 2px;
+  transition: transform .25s ease, opacity .2s ease;
+}
+.menu-aperto .hamburger span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.menu-aperto .hamburger span:nth-child(2) { opacity: 0; }
+.menu-aperto .hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+@media (max-width: 940px) {
+  .hamburger { display: block; }
+  .nav-menu {
+    position: fixed;
+    inset: 0 0 0 auto;
+    width: min(84vw, 340px);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 96px var(--sp-5) var(--sp-5);
+    background: var(--notte-scuro);
+    border-left: 1px solid var(--linea);
+    transform: translateX(102%);
+    transition: transform .32s cubic-bezier(.4, 0, .2, 1);
+    overflow-y: auto;
+  }
+  .menu-aperto .nav-menu { transform: translateX(0); }
+  .nav-link {
+    padding: 16px 12px;
+    font-family: var(--display);
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--linea);
+    border-radius: 0;
+  }
+  .nav-link.attivo::after { left: 12px; right: auto; width: 40px; bottom: 8px; }
+  .nav-giornata { margin: var(--sp-5) 0 0; justify-content: center; }
+}
+
+/* ---------------------------------------------------------
+   3. Bottoni
+   --------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  padding: 13px 22px;
+  border: 0;
+  border-radius: var(--r-sm);
+  font-family: var(--display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform .16s ease, box-shadow .2s ease, background .2s ease;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn:active { transform: translateY(0); }
+.btn--verde {
+  background: var(--verde);
+  color: #052B17;
+  box-shadow: 0 10px 24px -12px rgba(23, 217, 127, .9);
+}
+.btn--verde:hover { box-shadow: 0 16px 30px -12px rgba(23, 217, 127, .95); }
+.btn--oro { background: var(--oro); color: #3A2400; }
+.btn--fantasma {
+  background: transparent;
+  color: var(--testo);
+  box-shadow: inset 0 0 0 1px var(--linea-forte);
+}
+.btn--fantasma:hover { background: rgba(255, 255, 255, .07); }
+.btn--carta { background: var(--inchiostro); color: var(--carta); }
+.btn--piccolo { padding: 9px 15px; font-size: .95rem; }
+
+/* ---------------------------------------------------------
+   4. Pannelli e card
+   --------------------------------------------------------- */
+.pannello {
+  background: linear-gradient(180deg, var(--notte-2), rgba(34, 27, 77, .55));
+  border: 1px solid var(--linea);
+  border-radius: var(--r-lg);
+  box-shadow: var(--ombra);
+  overflow: hidden;
+}
+.pannello__testa {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  padding: var(--sp-4) var(--sp-5);
+  border-bottom: 1px solid var(--linea);
+  background: rgba(255, 255, 255, .03);
+}
+.pannello__testa h3 {
+  font-family: var(--display);
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+.pannello__testa .meta { font-size: var(--t-xs); color: var(--testo-mute); font-weight: 600; }
+.pannello__corpo { padding: var(--sp-5); }
+.pannello__piede {
+  padding: var(--sp-4) var(--sp-5);
+  border-top: 1px solid var(--linea);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--sp-4);
+  flex-wrap: wrap;
+}
+
+/* ---------------------------------------------------------
+   5. Stemmi e identità squadra
+   --------------------------------------------------------- */
+.stemma {
+  flex-shrink: 0;
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, .45));
+}
+.squadra-riga {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  min-width: 0;
+}
+.squadra-riga__nome {
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.squadra-riga__owner {
+  display: block;
+  font-size: var(--t-xs);
+  font-weight: 500;
+  color: var(--testo-mute);
+}
+
+/* ---------------------------------------------------------
+   6. Badge
+   --------------------------------------------------------- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: var(--r-pill);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.badge--verde  { background: rgba(23, 217, 127, .16); color: var(--verde); }
+.badge--oro    { background: rgba(255, 194, 75, .16);  color: var(--oro); }
+.badge--rosso  { background: rgba(255, 75, 62, .16);   color: #FF8078; }
+.badge--rosa   { background: rgba(255, 111, 165, .16); color: var(--rosa); }
+.badge--ciano  { background: rgba(70, 227, 232, .14);  color: var(--ciano); }
+.badge--neutro { background: rgba(255, 255, 255, .08); color: var(--testo-soft); }
+.badge--demo {
+  background: repeating-linear-gradient(45deg, rgba(255,194,75,.2) 0 6px, rgba(255,194,75,.08) 6px 12px);
+  color: var(--oro);
+  box-shadow: inset 0 0 0 1px rgba(255, 194, 75, .35);
+}
+
+/* Pallini forma (V / N / P) */
+.forma { display: inline-flex; gap: 4px; }
+.forma i {
+  width: 19px; height: 19px;
+  border-radius: 5px;
+  display: grid; place-items: center;
+  font-size: 10px; font-weight: 800; font-style: normal;
+}
+.forma i[data-r="V"] { background: rgba(23, 217, 127, .2);  color: var(--verde); }
+.forma i[data-r="N"] { background: rgba(255, 255, 255, .12); color: var(--testo-soft); }
+.forma i[data-r="P"] { background: rgba(255, 75, 62, .18);  color: #FF8078; }
+.forma i[data-r="-"] { background: rgba(255, 255, 255, .06); color: var(--testo-mute); }
+
+/* ---------------------------------------------------------
+   7. Tabella classifica
+   --------------------------------------------------------- */
+.tabella-wrap { overflow-x: auto; }
+.tabella {
+  min-width: 560px;
+  font-size: var(--t-sm);
+}
+.tabella thead th {
+  padding: var(--sp-3) var(--sp-3);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--testo-mute);
+  text-align: center;
+  border-bottom: 1px solid var(--linea);
+  white-space: nowrap;
+}
+.tabella thead th:nth-child(2) { text-align: left; }
+.tabella tbody td {
+  padding: 11px var(--sp-3);
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, .05);
+  vertical-align: middle;
+}
+.tabella tbody td:nth-child(2) { text-align: left; }
+.tabella tbody tr { transition: background .16s ease; }
+.tabella tbody tr:hover { background: rgba(255, 255, 255, .045); }
+.tabella .pt { font-family: var(--display); font-size: 1.35rem; }
+.tabella .fanta { color: var(--ciano); font-weight: 700; }
+.tabella td.debole { color: var(--testo-mute); }
+
+.pos {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 30px; height: 30px;
+  margin-inline: auto;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, .06);
+  font-family: var(--display);
+  font-size: 1.15rem;
+}
+.pos[data-zona="titolo"]      { background: rgba(23, 217, 127, .18); color: var(--verde); }
+.pos[data-zona="playoff"]     { background: rgba(70, 227, 232, .16); color: var(--ciano); }
+.pos[data-zona="retrocessione"]{ background: rgba(255, 75, 62, .18); color: #FF8078; }
+
+.legenda {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-4);
+  font-size: var(--t-xs);
+  color: var(--testo-mute);
+}
+.legenda span { display: inline-flex; align-items: center; gap: 7px; }
+.legenda i { width: 10px; height: 10px; border-radius: 3px; }
+
+/* ---------------------------------------------------------
+   8. Riga partita
+   --------------------------------------------------------- */
+.partita {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: var(--sp-4);
+  border-radius: var(--r-md);
+  background: rgba(255, 255, 255, .035);
+  border: 1px solid transparent;
+  transition: border-color .18s ease, background .18s ease;
+}
+.partita:hover { border-color: var(--linea-forte); background: rgba(255, 255, 255, .06); }
+.partita__lato { display: flex; align-items: center; gap: var(--sp-3); min-width: 0; }
+.partita__lato--dx { flex-direction: row-reverse; text-align: right; }
+.partita__nome {
+  font-weight: 700;
+  font-size: var(--t-sm);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.partita__fanta { display: block; font-size: 11px; color: var(--testo-mute); font-weight: 600; }
+.partita__punteggio {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: 6px 14px;
+  border-radius: 8px;
+  background: var(--notte-scuro);
+  box-shadow: inset 0 0 0 1px var(--linea);
+  font-family: var(--display);
+  font-size: 1.6rem;
+  line-height: 1;
+}
+.partita__punteggio em { font-style: normal; color: var(--testo-mute); font-size: 1rem; }
+.partita--vincitore-casa .partita__lato:first-child .partita__nome,
+.partita--vincitore-ospite .partita__lato--dx .partita__nome { color: var(--verde); }
+.partita__ora {
+  font-family: var(--display);
+  font-size: 1.15rem;
+  color: var(--testo-soft);
+  padding: 8px 14px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, .05);
+}
+
+/* ---------------------------------------------------------
+   9. Card articolo (versione scura, per home/preview)
+   --------------------------------------------------------- */
+.copertina {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--notte-3);
+}
+.copertina__iniziale {
+  position: absolute;
+  right: -.08em; bottom: -.28em;
+  font-family: var(--display);
+  font-size: 8rem;
+  line-height: .8;
+  color: rgba(255, 255, 255, .16);
+  text-transform: uppercase;
+}
+.copertina__cat {
+  position: absolute;
+  top: var(--sp-3); left: var(--sp-3);
+  padding: 5px 11px;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, .55);
+  backdrop-filter: blur(4px);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+/* ---------------------------------------------------------
+   10. Footer
+   --------------------------------------------------------- */
+.site-footer {
+  background: var(--notte-scuro);
+  border-top: 1px solid var(--linea);
+  padding-top: var(--sp-8);
+  margin-top: var(--sp-8);
+}
+.footer-griglia {
+  display: grid;
+  grid-template-columns: 1.6fr repeat(3, 1fr);
+  gap: var(--sp-6);
+  padding-bottom: var(--sp-7);
+}
+.footer-griglia h4 {
+  font-family: var(--display);
+  font-size: 1.15rem;
+  text-transform: uppercase;
+  margin-bottom: var(--sp-3);
+  color: var(--testo);
+}
+.footer-griglia li { margin-bottom: 9px; }
+.footer-griglia a, .footer-griglia p {
+  color: var(--testo-mute);
+  font-size: var(--t-sm);
+}
+.footer-griglia a:hover { color: var(--verde); }
+.footer-basso {
+  border-top: 1px solid var(--linea);
+  padding-block: var(--sp-4) var(--sp-5);
+  display: flex;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  flex-wrap: wrap;
+  font-size: var(--t-xs);
+  color: var(--testo-mute);
+}
+@media (max-width: 780px) {
+  .footer-griglia { grid-template-columns: 1fr 1fr; gap: var(--sp-5); }
+  .footer-griglia > div:first-child { grid-column: 1 / -1; }
+}
+
+/* ---------------------------------------------------------
+   11. Chip / filtri
+   --------------------------------------------------------- */
+.chips {
+  display: flex;
+  gap: var(--sp-2);
+  flex-wrap: wrap;
+}
+.chip {
+  padding: 8px 15px;
+  border-radius: var(--r-pill);
+  border: 1px solid var(--linea);
+  background: rgba(255, 255, 255, .04);
+  font-size: var(--t-sm);
+  font-weight: 600;
+  color: var(--testo-soft);
+  cursor: pointer;
+  transition: color .16s, background .16s, border-color .16s;
+}
+.chip:hover { color: var(--testo); border-color: var(--linea-forte); }
+.chip[aria-pressed="true"] {
+  background: var(--verde);
+  border-color: var(--verde);
+  color: #052B17;
+}
+
+/* Selettore squadra a scorrimento orizzontale */
+.selettore-squadre {
+  display: flex;
+  gap: var(--sp-3);
+  overflow-x: auto;
+  padding-bottom: var(--sp-3);
+  scrollbar-width: thin;
+}
+.selettore-squadre::-webkit-scrollbar { height: 6px; }
+.selettore-squadre::-webkit-scrollbar-thumb { background: var(--notte-3); border-radius: 3px; }
+.tile-squadra {
+  flex: 0 0 auto;
+  width: 132px;
+  padding: var(--sp-4) var(--sp-3);
+  border-radius: var(--r-md);
+  border: 1px solid var(--linea);
+  background: rgba(255, 255, 255, .035);
+  text-align: center;
+  cursor: pointer;
+  transition: transform .18s ease, border-color .18s ease, background .18s ease;
+}
+.tile-squadra:hover { transform: translateY(-3px); border-color: var(--linea-forte); }
+.tile-squadra .stemma { margin: 0 auto var(--sp-3); }
+.tile-squadra b {
+  display: block;
+  font-size: var(--t-xs);
+  line-height: 1.3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.tile-squadra small { color: var(--testo-mute); font-size: 11px; }
+.tile-squadra[aria-pressed="true"],
+.tile-squadra[aria-current="true"] {
+  background: rgba(23, 217, 127, .12);
+  border-color: var(--verde);
+}
+
+/* ---------------------------------------------------------
+   12. Nota dati placeholder
+   --------------------------------------------------------- */
+.nota-dati {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-3);
+  padding: var(--sp-4);
+  border-radius: var(--r-md);
+  border: 1px dashed rgba(255, 194, 75, .4);
+  background: rgba(255, 194, 75, .06);
+  color: #F3D9A6;
+  font-size: var(--t-sm);
+  margin-bottom: var(--sp-5);
+}
+.nota-dati b { color: var(--oro); }
+
+/* ---------------------------------------------------------
+   13. Vuoto
+   --------------------------------------------------------- */
+.vuoto {
+  padding: var(--sp-8) var(--sp-5);
+  text-align: center;
+  color: var(--testo-mute);
+  border: 1px dashed var(--linea-forte);
+  border-radius: var(--r-md);
+}
+.vuoto h3 { font-family: var(--display); font-size: 1.6rem; color: var(--testo); margin-bottom: var(--sp-2); text-transform: uppercase; }

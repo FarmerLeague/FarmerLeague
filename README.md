@@ -77,3 +77,47 @@ Appena una giornata ha almeno un risultato, homepage e classifica passano da sol
 
 - **Date:** la giornata di lega N si gioca sulla giornata N+3 di Serie A. Le date stanno nella tabella `dateSerieA` in `config.js`: se la Lega sposta un turno basta correggere lì, oppure scrivere la data direttamente nella giornata dentro `fixtures.js`, che ha la precedenza.
 - **Crediti d'asta:** non sono più mostrati da nessuna parte, ma restano salvati nel campo `costo` di `squads.js` (e la funzione `FL.data.creditiSpesi()` continua a esistere) nel caso servissero più avanti.
+
+## Foglio Google (aggiornamento senza toccare i file)
+
+Il sito può leggere i dati da un foglio Google invece che dai file. In `config.js`:
+
+```js
+foglio: {
+  attivo: true,
+  id: "la-parte-lunga-dell-indirizzo-del-foglio",
+  schede: { squadre: "squadre", rose: "rose", risultati: "risultati",
+            notizie: "notizie", giovanili: "giovanili" }
+}
+```
+
+Il foglio va condiviso in lettura ("Chiunque abbia il link"). Le schede sono tutte facoltative:
+quello che manca resta come nei file. Se il foglio non risponde entro pochi secondi, il sito
+parte comunque con i dati locali, quindi non può restare bloccato.
+
+La pagina `#/dati` mostra se il collegamento funziona e quante righe sono state lette da ogni
+scheda: è il primo posto dove guardare se qualcosa non compare.
+
+## Cronista automatico
+
+Dopo ogni giornata giocata il sito genera da solo il pezzo di riepilogo: risultati, punteggio
+più alto e più basso, goleade, pareggi beffardi, sorpassi in classifica, strisce aperte e
+cambi in vetta. Ogni frase nasce da un dato presente nel calendario o nella classifica: non
+viene inventato nulla. Gli articoli portano la firma del Cronista e l'etichetta "automatico".
+
+Si spegne da `config.js` con `cronista: { attivo: false }`. Se scrivi a mano un articolo con
+l'indirizzo `giornata-N-riepilogo`, quello ha la precedenza e il pezzo automatico non compare.
+
+## Coppe
+
+Tre competizioni oltre al campionato, descritte in `assets/js/data/competitions.js`:
+
+- **Coppa Italia** — formato Formula 1: ogni giornata valida le squadre vengono ordinate per
+  fantapunti e ricevono i punti dell'elenco `punti`. Le giornate valide stanno in `giornateSerieA`.
+- **Champions League** — due gironi da quattro, andata e ritorno, poi semifinali e finale.
+- **Supercoppa Farmeriana** — quattro squadre, semifinali e finale in gara secca.
+
+Non serve inserire risultati: in una giornata di Serie A ogni squadra ha un solo punteggio fanta,
+quindi le coppe si calcolano dai risultati di campionato tramite il campo `serieA`. Gli
+accoppiamenti lasciati a `null` si riempiono da soli — le semifinali con le qualificate dai gironi,
+la finale con le vincenti — e le parità si risolvono con i fantapunti, come da regolamento.

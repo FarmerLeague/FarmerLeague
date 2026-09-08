@@ -23,6 +23,7 @@ FL.components.footer = (function () {
             '<div><h4>Competizione</h4><ul>' +
               '<li><a href="#/classifica">Classifica</a></li>' +
               '<li><a href="#/calendario">Calendario e risultati</a></li>' +
+              '<li><a href="#/coppe">Coppe e Champions</a></li>' +
               '<li><a href="#/albo-doro">Albo d\'oro</a></li>' +
             '</ul></div>' +
             '<div><h4>Squadre</h4><ul>' +

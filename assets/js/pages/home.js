@@ -183,6 +183,29 @@ FL.pages.home = (function () {
       '<div class="stat-griglia">' + corpo + '</div></div></section>';
   }
 
+  /* Le tre coppe, con il prossimo impegno in evidenza */
+  function coppe() {
+    if (!FL.data.competizioni || !FL.data.competizioni.length) return "";
+    var prossimo = FL.coppe.prossimoTurno();
+
+    return '<section class="sezione"><div class="wrap">' +
+      '<div class="sezione-testa"><div><span class="kicker kicker--rosa">Oltre il campionato</span>' +
+      '<h2>Le coppe</h2>' +
+      '<p>Coppa Italia, Champions League e Supercoppa. I risultati nascono dagli stessi fantapunti del campionato.</p></div>' +
+      '<a class="btn btn--fantasma btn--piccolo" href="#/coppe">Tutte le competizioni</a></div>' +
+      (prossimo ? '<div class="nota-dati" style="border-color:rgba(255,111,165,.4);background:rgba(255,111,165,.07);color:#F3C6D8">' +
+        '<b style="color:var(--rosa)">Prossimo impegno:</b> ' + FL.ui.esc(prossimo.comp.nome) + ' · ' +
+        FL.ui.esc(prossimo.nome) + ', ' + prossimo.serieA + 'ª di Serie A</div>' : '') +
+      '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:var(--sp-4)">' +
+      FL.data.competizioni.map(function (c) {
+        return '<a class="stat-card" href="#/coppe/' + c.id + '" style="display:block">' +
+          '<span class="badge badge--neutro">' + FL.ui.esc(c.scheda[0][1]) + '</span>' +
+          '<div class="stat-card__nome" style="color:' + c.colore + ';margin-top:10px">' + FL.ui.esc(c.nome) + '</div>' +
+          '<div class="stat-card__dett">' + FL.ui.esc(c.sottotitolo) + '</div></a>';
+      }).join("") +
+      '</div></div></section>';
+  }
+
   function giornale() {
     var articoli = FL.data.newsOrdinate();
     if (!articoli.length) return "";
@@ -259,7 +282,7 @@ FL.pages.home = (function () {
   return {
     titolo: function () { return "Home"; },
     render: function () {
-      return hero() + classificaEPartite() + numeri() + giornale() + rose() + storia();
+      return hero() + classificaEPartite() + numeri() + giornale() + coppe() + rose() + storia();
     }
   };
 })();

@@ -9,6 +9,7 @@ FL.components.header = (function () {
     { href: "#/classifica", testo: "Classifica", sezione: "/classifica" },
     { href: "#/calendario", testo: "Calendario", sezione: "/calendario" },
     { href: "#/notizie",    testo: "Notizie",    sezione: "/notizie" },
+    { href: "#/coppe",      testo: "Coppe",      sezione: "/coppe" },
     { href: "#/rose",       testo: "Rose",       sezione: "/rose" },
     { href: "#/giovanili",  testo: "Giovanili",  sezione: "/giovanili" },
     { href: "#/albo-doro",  testo: "Albo d'Oro", sezione: "/albo-doro" }

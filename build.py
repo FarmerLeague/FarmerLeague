@@ -10,6 +10,7 @@ Uso:
     python3 build.py            -> genera fantalega-standalone.html
     python3 build.py sito.html  -> nome file a scelta
 """
+import base64
 import re
 import sys
 from pathlib import Path
@@ -28,8 +29,20 @@ def inline_js(m):
     return "<script>\n" + percorso.read_text(encoding="utf-8") + "\n</script>"
 
 
+def inline_img(m):
+    """Trasforma i riferimenti alle immagini in dati incorporati,
+    così il file unico funziona anche da solo."""
+    percorso = BASE / m.group(1)
+    if not percorso.exists():
+        return m.group(0)
+    dati = base64.b64encode(percorso.read_bytes()).decode()
+    tipo = "image/png" if percorso.suffix.lower() == ".png" else "image/jpeg"
+    return f'"data:{tipo};base64,{dati}"'
+
+
 out = re.sub(r'<link rel="stylesheet" href="([^"]+)">', inline_css, sorgente)
 out = re.sub(r'<script src="([^"]+)"></script>', inline_js, out)
+out = re.sub(r'"(assets/img/[^"]+)"', inline_img, out)
 
 destinazione = BASE / (sys.argv[1] if len(sys.argv) > 1 else "fantalega-standalone.html")
 destinazione.write_text(out, encoding="utf-8")

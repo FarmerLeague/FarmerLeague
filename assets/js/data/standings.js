@@ -12,8 +12,8 @@
    ========================================================= */
 FL.data.classificaManuale = null;
 
-FL.data.classifica = function () {
-  if (FL.data.classificaManuale) return FL.data.classificaManuale.slice();
+FL.data.classifica = function (finoA) {
+  if (FL.data.classificaManuale && finoA === undefined) return FL.data.classificaManuale.slice();
 
   var cfg = FL.config.punteggio;
   var righe = {};
@@ -22,6 +22,7 @@ FL.data.classifica = function () {
   });
 
   FL.data.fixtures.forEach(function (giornata) {
+    if (finoA !== undefined && giornata.numero > finoA) return;   // classifica com'era
     giornata.partite.forEach(function (m) {
       if (!m.giocata) return;
       var c = righe[m.casa], o = righe[m.ospite];

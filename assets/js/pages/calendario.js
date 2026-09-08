@@ -76,9 +76,9 @@ FL.pages.calendario = (function () {
           (successiva ? '<a class="btn btn--fantasma btn--piccolo" href="#/calendario/' + (n + 1) + '">Giornata ' + (n + 1) + '</a>' : '<span></span>') +
         '</div>' +
 
-        '<div style="margin-top:var(--sp-7)">' + FL.ui.notaDati(
-          "Accoppiamenti presi dal calendario ufficiale della lega. Mancano le date: appena me le dai le mostro qui e in homepage."
-        ) + '</div>' +
+        '<p style="margin-top:var(--sp-7);color:var(--testo-mute);font-size:var(--t-sm)">' +
+          'Accoppiamenti dal calendario ufficiale della lega. Le date seguono quelle di Serie A: ' +
+          'la giornata di lega si gioca sulla giornata di Serie A indicata qui sopra.</p>' +
       '</div></section>';
     }
   };

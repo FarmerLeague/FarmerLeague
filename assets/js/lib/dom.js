@@ -67,7 +67,7 @@ FL.ui.copertina = function (articolo, classe) {
   var cat = FL.data.categoria(articolo.categoria).nome;
   if (articolo.copertina && articolo.copertina.immagine) {
     return '<div class="copertina ' + (classe || '') + '">' +
-      '<img src="' + FL.ui.esc(articolo.copertina.immagine) + '" alt="" style="width:100%;height:100%;object-fit:cover">' +
+      '<img src="' + FL.ui.esc(articolo.copertina.immagine) + '" alt="" style="width:100%;height:100%;object-fit:cover;object-position:50% 35%">' +
       '<span class="copertina__cat" style="color:' + c + '">' + FL.ui.esc(cat) + '</span></div>';
   }
   var sfondo = 'background:' +
@@ -84,6 +84,7 @@ FL.ui.copertina = function (articolo, classe) {
 FL.ui.firma = function (a) {
   return '<div class="firma"><b>' + FL.ui.esc(a.autore) + '</b>' +
     '<i class="punto"></i>' + FL.ui.esc(FL.ui.dataEstesa(a.data)) +
+    (a.auto ? '<i class="punto"></i>automatico' : '') +
     (a.demo ? '<i class="punto"></i>esempio' : '') + '</div>';
 };
 

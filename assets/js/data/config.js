@@ -101,10 +101,39 @@ FL.config = {
     { id: "varie",      nome: "Varie" }
   ],
 
+  /* --- Foglio Google ---------------------------------------
+     Con `attivo: true` il sito, all'apertura, legge i dati dal
+     foglio invece che dai file: risultati, notizie, rose,
+     giovanili e proprietari si aggiornano scrivendo lì.
+     `id` è la parte lunga dell'indirizzo del foglio, quella fra
+     /d/ e /edit. Il foglio deve essere condiviso in lettura
+     ("Chiunque abbia il link").
+     Se il foglio non risponde, il sito usa i dati dei file. */
+  foglio: {
+    attivo: false,
+    id: "INCOLLA_QUI_ID_DEL_FOGLIO",
+    schede: {
+      squadre: "squadre",
+      rose: "rose",
+      risultati: "risultati",
+      notizie: "notizie",
+      giovanili: "giovanili"
+    }
+  },
+
+  /* --- Cronista automatico ---------------------------------
+     Dopo ogni giornata scrive il pezzo di riepilogo partendo
+     dai risultati. Un articolo scritto a mano con lo stesso
+     indirizzo (giornata-N-riepilogo) ha sempre la precedenza. */
+  cronista: {
+    attivo: true,
+    autore: "Il Cronista"
+  },
+
   ui: {
     /* Bollini "demo" e riquadri gialli sui contenuti ancora provvisori.
        Metti false quando i dati saranno tutti reali. */
     mostraBadgeDemo: true,
-    notaDati: "Mancano ancora le date delle giornate e le rose delle giovanili."
+    notaDati: "Le rose delle giovanili non sono ancora state inserite."
   }
 };

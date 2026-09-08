@@ -24,6 +24,41 @@
    ========================================================= */
 FL.data.news = [
   {
+    slug: "csm-comunicato-ingresso",
+    titolo: "«Non siamo qui per partecipare»: la CSM FC si presenta alla lega",
+    occhiello: "Il comunicato d'ingresso della neopromossa, alla decima edizione della Farmer League",
+    autore: "Il Presidente, CSM FC",
+    squadra: "csm",
+    data: "2026-09-08",
+    categoria: "comunicati",
+    tags: ["CSM FC", "neopromossa", "asta", "Ponferradina"],
+    anteprima: "La dodicesima squadra della lega si presenta senza giri di parole: obiettivo titolo al primo anno, e una strategia d'asta costruita apposta per far male alla Ponferradina.",
+    corpo: [
+      "Il Presidente di CSM FC comunica ufficialmente l'ingresso della società nella Farmer League, in occasione della sua decima edizione.",
+      "Essere neopromossi non significa essere inferiori. Significa semplicemente che gli altri hanno avuto il privilegio di giocare prima di noi.",
+      "Entriamo in questa competizione con un unico obiettivo: vincere. Non ci interessano piazzamenti dignitosi, salvezze tranquille o partecipazioni di contorno. La CSM FC è stata costruita per competere immediatamente ai massimi livelli e puntiamo al titolo già alla nostra prima esperienza in Farmer League.",
+      "Essere presenti alla decima edizione della lega è per me motivo di grande orgoglio. Ma, allo stesso tempo, credo sia arrivato il momento che qualcuno provi a rovinare un po\' la festa a chi è abituato a considerarsi grande.",
+      "IL PROGETTO",
+      "La nostra rosa nasce da una filosofia estremamente chiara: solidità, qualità e fame. Abbiamo puntato su giocatori ormai consolidati in Serie A, abituati ai grandi palcoscenici e capaci di garantire rendimento e continuità.",
+      "A loro abbiamo affiancato giovani promettenti, affamati e ambiziosi, desiderosi di lasciare il proprio segno nella massima competizione italiana. Esperienza e talento, certezze e scommesse: un mix che, secondo noi, può fare molto male. E soprattutto, a differenza di qualcuno, non abbiamo costruito una rosa per arrivare secondi.",
+      "LA STRATEGIA D\'ASTA",
+      "Durante l\'asta abbiamo adottato una strategia precisa e scientificamente studiata: rialzare i giocatori chiamati dal Presidente della Ponferradina FC. Non è stato un caso, non è stato un incidente, e non era nemmeno una questione di giocatori che ci interessavano particolarmente.",
+      "Era semplicemente un messaggio. Volevamo rendere ogni chiamata della Ponferradina più costosa, più complicata e possibilmente più dolorosa. Se poi qualche giocatore è stato pagato più del suo reale valore, pazienza: il nostro budget è un problema nostro, il vostro sarà cercare di batterci.",
+      "IL NOME",
+      "Qualcuno potrebbe chiedersi da dove derivi il nome della società. CSM nasce dal barrio più pericoloso di Santiago del Cile ed è l\'acronimo di «Concha su Madre». Un nome elegante, raffinato e soprattutto perfettamente rappresentativo dello spirito con cui intendiamo affrontare questa competizione.",
+      "Porta con sé la fame di riscatto dei giovani cileni che provano a cambiare la propria vita con il sudore e la forza messi in campo a ogni partita. Non c\'era modo migliore per esprimere la nostra filosofia. E chi non ha capito, probabilmente lo capirà dopo averci incontrato in campo.",
+      "UN AVVERTIMENTO, NON UN AUGURIO",
+      "Sappiamo che molti ci vedranno come la neopromossa da battere, la nuova arrivata che dovrebbe prima ambientarsi e poi, magari, provare a competere. Noi invece pensiamo che debbano essere gli altri ad ambientarsi alla nostra presenza.",
+      "Non siamo venuti in Farmer League per fare numero. Non siamo venuti per imparare. Non siamo venuti per fare esperienza. Siamo venuti per prenderci il titolo.",
+      "Agli avversari va comunque il nostro saluto e il nostro più sincero augurio di buona fortuna. Ne avranno bisogno. Ci vediamo in campo e soprattutto ci vediamo in classifica.",
+      "Con rispetto per tutti. Paura di nessuno.",
+      "Il Presidente, CSM FC"
+    ],
+    copertina: { immagine: "assets/img/news/csm-comunicato.jpg" },
+    inEvidenza: true,
+    demo: false
+  },
+  {
     slug: "giovani-in-prima-squadra",
     titolo: "L'asta dei ragazzi: il vivaio entra in prima squadra",
     occhiello: "Quattro promozioni dalle giovanili: è il segnale che il settore giovanile ha cambiato la lega",
@@ -41,7 +76,7 @@ FL.data.news = [
       "Chi invece è arrivato all'asta senza nulla in cantina ha dovuto comprare tutto al prezzo di mercato. La differenza, in una lega dove il budget è identico per tutti, la si vede eccome. E vale la pena tenerlo a mente da qui alla prossima finestra: i ragazzi che oggi nessuno guarda sono le occasioni dell'asta che verrà."
     ],
     copertina: { immagine: "assets/img/news/giovani-promossi.jpg" },
-    inEvidenza: true,
+    inEvidenza: false,
     demo: false
   },
   {

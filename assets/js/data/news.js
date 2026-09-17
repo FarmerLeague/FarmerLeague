@@ -24,6 +24,34 @@
    ========================================================= */
 FL.data.news = [
   {
+    slug: "pagelle-giornata-1",
+    titolo: "Mastantuono da 17.5, e il ragazzo del vivaio segna subito",
+    occhiello: "I migliori e i peggiori della prima giornata",
+    autore: "La Redazione",
+    squadra: null,
+    data: "2026-09-17",
+    categoria: "pagelle",
+    tags: ["giornata 1", "pagelle", "giovani"],
+    anteprima: "Diciassette gol, tre squadre a punteggio pieno e un solo punteggio sopra quota 80. Chi ha spostato gli equilibri e chi ha affondato la propria squadra.",
+    corpo: [
+      "La prima giornata ha detto una cosa su tutte: chi aveva costruito bene il centrocampo si è portato a casa il turno. Diciassette gol complessivi, tre squadre a punteggio pieno e distanze minime quasi ovunque, con l\'unico scarto vero nello 0-1 fra Ponferradina e Thorino.",
+      "IL MIGLIORE",
+      "Mastantuono, 8.5 di voto e 17.5 di fantavoto, è stato il giocatore più decisivo della giornata con un margine enorme su tutti gli altri. Un punteggio così vale da solo mezzo risultato, e infatti il Tettenham ha strappato un 3-3 contro gli 81.5 fantapunti dell\'Isagogici Anemoni, il punteggio di squadra più alto del turno.",
+      "IL RAGAZZO",
+      "Il dato che fa più rumore, però, è un altro: Esposito F.P. ha chiuso con 7 di voto e 10 di fantavoto, andando in gol. È il giocatore promosso dal vivaio del Tettenham quest\'estate, quello di cui si era parlato come dell\'acquisto a costo zero dell\'asta. Prima giornata, primo timbro. Chi aveva investito sulle giovanili ha avuto la risposta immediata.",
+      "GLI ALTRI DA TENERE D\'OCCHIO",
+      "Dietro Mastantuono si è messo Coulibaly L. dell\'Isagogici con 13.5, poi Thuram del Thorino a 11, decisivo nell\'unica vittoria di misura del turno. A quota 10.5 Carlos Augusto del Birrareal e Barella del Tune Squad; a 10 Kaiki e Kvernadze della CSM, Pellegrino M. e Malen dell\'Atletico Ziopeiro, Mendy P. del Masterchef United e Ramon del Borussia Pdortmund.",
+      "Da segnalare la prova della CSM, che alla prima assoluta in Farmer League ha vinto 3-2 in trasferta con tre giocatori sopra i 9.5: oltre a Kaiki e Kvernadze, anche Ekkelenkamp e Adams A. hanno spinto i 79 fantapunti che sono valsi la testa della classifica.",
+      "I PEGGIORI",
+      "Serata complicata per i portieri. Martinez Jo. dell\'A.S. Shole ha chiuso a 2, Stankovic F. del Thorino pure a 2 pur vincendo la partita, Maignan dell\'Atletico Ziopeiro a 4.5, Carnesecchi del Birrareal e De Gea della Ponferradina a 4. Ma il conto più salato lo ha pagato Colombo delle Brigate Ebosse: espulso, 2 di fantavoto, e uno 0-0 che pesa.",
+      "UNO SGUARDO AVANTI",
+      "Il prossimo turno vale doppio: oltre alla seconda giornata di campionato si gioca la finale di Supercoppa Farmeriana, che le semifinali hanno assegnato a Tune Squad e Tettenham."
+    ],
+    copertina: { immagine: null },
+    inEvidenza: true,
+    demo: false
+  },
+  {
     slug: "csm-comunicato-ingresso",
     titolo: "«Non siamo qui per partecipare»: la CSM FC si presenta alla lega",
     occhiello: "Il comunicato d'ingresso della neopromossa, alla decima edizione della Farmer League",
@@ -55,7 +83,7 @@ FL.data.news = [
       "Il Presidente, CSM FC"
     ],
     copertina: { immagine: "assets/img/news/csm-comunicato.jpg" },
-    inEvidenza: true,
+    inEvidenza: false,
     demo: false
   },
   {

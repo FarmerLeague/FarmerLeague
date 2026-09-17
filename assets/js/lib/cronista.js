@@ -105,7 +105,11 @@ FL.cronista = (function () {
     var g = f.giornata, seme = g.numero, p = [];
 
     /* Apertura: dipende dal fatto più rilevante */
-    if (f.cambioVetta) {
+    if (g.numero === 1) {
+      p.push("Il campionato è partito. La prima giornata si chiude con " + f.golTotali +
+        " gol e " + nome(f.capolista.teamId) + " in testa alla classifica" +
+        (f.capolista.punti === 3 ? ", una delle squadre a punteggio pieno" : "") + ".");
+    } else if (f.cambioVetta) {
       p.push(scegli([
         "Cambio in testa alla classifica: " + nome(f.cambioVetta.teamId) + " si prende il primo posto con " +
           f.cambioVetta.punti + " punti dopo la " + g.numero + "ª giornata.",
@@ -177,6 +181,7 @@ FL.cronista = (function () {
 
   function titolo(f) {
     var g = f.giornata.numero;
+    if (f.giornata.numero === 1) return "Si parte: " + nome(f.capolista.teamId) + " prima capolista della stagione";
     if (f.cambioVetta) return "Giornata " + g + ": " + nome(f.cambioVetta.teamId) + " vola in testa";
     if (f.goleada.scarto >= 3) {
       var vinc = f.goleada.m.golCasa > f.goleada.m.golOspite ? f.goleada.m.casa : f.goleada.m.ospite;

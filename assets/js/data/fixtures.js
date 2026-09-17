@@ -17,12 +17,12 @@ FL.data.fixtures = [
   {
     numero: 1, serieA: 4, data: null,
     partite: [
-      { casa: "tettenham", ospite: "isagogici", golCasa: null, golOspite: null, fantaCasa: null, fantaOspite: null, giocata: false, nota: "" },
-      { casa: "ponferradina", ospite: "thorino", golCasa: null, golOspite: null, fantaCasa: null, fantaOspite: null, giocata: false, nota: "" },
-      { casa: "tunesquad", ospite: "masterchef", golCasa: null, golOspite: null, fantaCasa: null, fantaOspite: null, giocata: false, nota: "" },
-      { casa: "ziopeiro", ospite: "csm", golCasa: null, golOspite: null, fantaCasa: null, fantaOspite: null, giocata: false, nota: "" },
-      { casa: "brigate", ospite: "shole", golCasa: null, golOspite: null, fantaCasa: null, fantaOspite: null, giocata: false, nota: "" },
-      { casa: "birrareal", ospite: "pdortmund", golCasa: null, golOspite: null, fantaCasa: null, fantaOspite: null, giocata: false, nota: "" }
+      { casa: "tettenham", ospite: "isagogici", golCasa: 3, golOspite: 3, fantaCasa: 78, fantaOspite: 81.5, giocata: true, nota: "" },
+      { casa: "ponferradina", ospite: "thorino", golCasa: 0, golOspite: 1, fantaCasa: 65, fantaOspite: 69, giocata: true, nota: "" },
+      { casa: "tunesquad", ospite: "masterchef", golCasa: 1, golOspite: 1, fantaCasa: 70.5, fantaOspite: 71.5, giocata: true, nota: "" },
+      { casa: "ziopeiro", ospite: "csm", golCasa: 2, golOspite: 3, fantaCasa: 74.5, fantaOspite: 79, giocata: true, nota: "" },
+      { casa: "brigate", ospite: "shole", golCasa: 0, golOspite: 0, fantaCasa: 63, fantaOspite: 64.5, giocata: true, nota: "" },
+      { casa: "birrareal", ospite: "pdortmund", golCasa: 1, golOspite: 2, fantaCasa: 70, fantaOspite: 72.5, giocata: true, nota: "" }
     ]
   },
   {

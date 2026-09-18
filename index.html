@@ -3,17 +3,30 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Fantalega · Campionato privato di fantacalcio</title>
-<meta name="description" content="Classifica, calendario, rose, giovanili, albo d'oro e il giornale della lega.">
+<title>Farmer League · Campionato privato di fantacalcio</title>
+<meta name="description" content="Classifica, calendario, coppe, rose, giovanili, albo d'oro e il giornale della lega.">
 <meta name="theme-color" content="#191439">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800;900&family=Archivo:wght@400;500;600;700;800&family=Frank+Ruhl+Libre:wght@500;700;900&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="assets/css/tokens.css">
-<link rel="stylesheet" href="assets/css/components.css">
-<link rel="stylesheet" href="assets/css/pages.css">
+<script id="caricatore-css">
+(function () {
+  /* I fogli di stile vengono chiesti con un contrassegno che cambia ogni
+     cinque minuti. Senza, dopo un aggiornamento il browser continuerebbe
+     a mostrare la copia vecchia che ha in memoria. */
+  var v = Math.floor(Date.now() / 300000);
+  var fogli = [
+    "css/tokens.css",
+    "css/components.css",
+    "css/pages.css"
+  ];
+  for (var i = 0; i < fogli.length; i++) {
+    document.write('<link rel="stylesheet" href="assets/' + fogli[i] + '?v=' + v + '">');
+  }
+})();
+</script>
 </head>
 <body>
 
@@ -21,44 +34,60 @@
 <main id="app"></main>
 <footer id="piede" class="site-footer"></footer>
 
-<!-- 1. Dati: è qui che si inseriscono le informazioni della lega -->
-<script src="assets/js/data/config.js"></script>
-<script src="assets/js/data/teams.js"></script>
-<script src="assets/js/data/fixtures.js"></script>
-<script src="assets/js/data/standings.js"></script>
-<script src="assets/js/data/news.js"></script>
-<script src="assets/js/data/squads.js"></script>
-<script src="assets/js/data/youth.js"></script>
-<script src="assets/js/data/honours.js"></script>
-<script src="assets/js/data/competitions.js"></script>
+<script id="caricatore-js">
+(function () {
+  /* Tutti i file del sito, nell'ordine in cui vanno eseguiti.
+     Per aggiungere una pagina nuova basta una riga in questo elenco.
 
-<!-- 2. Strumenti condivisi -->
-<script src="assets/js/lib/dom.js"></script>
-<script src="assets/js/lib/csv.js"></script>
-<script src="assets/js/lib/foglio.js"></script>
-<script src="assets/js/lib/cronista.js"></script>
-<script src="assets/js/lib/coppe.js"></script>
-<script src="assets/js/lib/crest.js"></script>
-<script src="assets/js/lib/router.js"></script>
+     Come per i fogli di stile, ogni file porta un contrassegno che cambia
+     ogni cinque minuti: è quello che fa comparire subito gli aggiornamenti
+     invece di costringere a svuotare la cache del browser. */
+  var v = Math.floor(Date.now() / 300000);
+  var file = [
+    /* 1. Dati: è qui che si inseriscono le informazioni della lega */
+    "js/data/config.js",
+    "js/data/teams.js",
+    "js/data/fixtures.js",
+    "js/data/standings.js",
+    "js/data/news.js",
+    "js/data/squads.js",
+    "js/data/youth.js",
+    "js/data/honours.js",
+    "js/data/competitions.js",
 
-<!-- 3. Componenti -->
-<script src="assets/js/components/blocks.js"></script>
-<script src="assets/js/components/header.js"></script>
-<script src="assets/js/components/footer.js"></script>
+    /* 2. Strumenti condivisi */
+    "js/lib/dom.js",
+    "js/lib/csv.js",
+    "js/lib/foglio.js",
+    "js/lib/cronista.js",
+    "js/lib/coppe.js",
+    "js/lib/crest.js",
+    "js/lib/router.js",
 
-<!-- 4. Pagine -->
-<script src="assets/js/pages/home.js"></script>
-<script src="assets/js/pages/classifica.js"></script>
-<script src="assets/js/pages/calendario.js"></script>
-<script src="assets/js/pages/notizie.js"></script>
-<script src="assets/js/pages/articolo.js"></script>
-<script src="assets/js/pages/rose.js"></script>
-<script src="assets/js/pages/giovanili.js"></script>
-<script src="assets/js/pages/coppe.js"></script>
-<script src="assets/js/pages/albo.js"></script>
-<script src="assets/js/pages/dati.js"></script>
+    /* 3. Componenti */
+    "js/components/blocks.js",
+    "js/components/header.js",
+    "js/components/footer.js",
 
-<!-- 5. Avvio -->
-<script src="assets/js/app.js"></script>
+    /* 4. Pagine */
+    "js/pages/home.js",
+    "js/pages/classifica.js",
+    "js/pages/calendario.js",
+    "js/pages/notizie.js",
+    "js/pages/articolo.js",
+    "js/pages/rose.js",
+    "js/pages/giovanili.js",
+    "js/pages/coppe.js",
+    "js/pages/albo.js",
+    "js/pages/dati.js",
+
+    /* 5. Avvio */
+    "js/app.js"
+  ];
+  for (var i = 0; i < file.length; i++) {
+    document.write('<scr' + 'ipt src="assets/' + file[i] + '?v=' + v + '"></scr' + 'ipt>');
+  }
+})();
+</script>
 </body>
 </html>

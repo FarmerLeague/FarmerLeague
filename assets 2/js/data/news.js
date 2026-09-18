@@ -24,6 +24,71 @@
    ========================================================= */
 FL.data.news = [
   {
+    slug: "finale-supercoppa-fabbro-bacchiega",
+    titolo: "Presidente contro vicepresidente: la prima Supercoppa è la finale dei fondatori",
+    occhiello: "Domenica, sulla quinta di Serie A, Tune Squad e Tettenham si giocano il primo trofeo della nuova competizione",
+    autore: "La Redazione",
+    squadra: null,
+    data: "2026-09-18",
+    categoria: "news",
+    tags: ["Supercoppa", "finale", "Tune Squad", "Tettenham", "Fabbro", "Bacchiega"],
+    anteprima: "Nove anni di lega, nove stagioni fianco a fianco ai vertici, e mai una finale in comune. Domenica Simone Fabbro e Giovanni Bacchiega si giocano il primo trofeo di una competizione che nell'albo d'oro non esiste ancora.",
+    corpo: [
+      "Ci sono partite che valgono un trofeo e partite che valgono qualcosa in più. Domenica, sulla quinta giornata di Serie A, la Farmer League assegna per la prima volta nella sua storia la Supercoppa Farmeriana. E il sorteggio, il campo, o forse qualcosa che assomiglia al destino, hanno deciso che a giocarsela siano i due uomini che questa lega l'hanno fondata e la governano da dieci anni: Simone Fabbro, presidente, con il suo Tettenham; Giovanni Bacchiega, vicepresidente, con il suo Tune Squad.",
+      "Non è una finale come le altre. È la prima di una competizione nuova, e questo significa una cosa sola: la bacheca è vuota. Nessuno l'ha mai alzata, nessuno può dire di difenderla. Chi vince domenica non aggiunge un titolo al proprio palmarès, ci scrive sopra la prima riga.",
+      "DUE UOMINI, DIECI ANNI, ZERO SCUDETTI",
+      "C'è un dato che rende questa sfida molto più di una partita fra dirigenti, ed è il più crudele di tutti. In nove stagioni di Farmer League, né Fabbro né Bacchiega hanno mai vinto il campionato. Mai. Il Tune Squad ha collezionato cinque podi, il numero più alto di tutta la lega, e non è mai arrivato primo. Il Tettenham ne ha quattro, e nemmeno lui ha mai chiuso in vetta. Nove piazzamenti d'onore in due, e nessuno scudetto da nessuna delle due parti.",
+      "Hanno vinto altro, e parecchio: due Coppe Italia a testa, una Champions League per Bacchiega. Ma il trofeo che conta davvero, quello che ogni anno dà il nome alla stagione, è sempre finito nelle mani di qualcun altro. Sono i due eterni secondi della Farmer League, ed è forse per questo che questa finale brucia più di quanto la parola «Supercoppa» lasci immaginare.",
+      "NON SI ERANO MAI INCONTRATI",
+      "Il dato che chiude il cerchio: in nove anni di competizioni, fra Coppa Italia e Champions League, Tettenham e Tune Squad non si sono mai trovati di fronte in una finale. Si sono alternati, sfiorati, superati a vicenda in classifica, ma mai incrociati quando il trofeo era lì sul tavolo. La prima volta è adesso, nella prima edizione del torneo più giovane della lega, con in palio un titolo che nessuno ha mai tenuto in mano.",
+      "COME CI SONO ARRIVATI",
+      "Nessuna delle due strade è stata comoda. In semifinale il Tune Squad ha eliminato l'A.S. Shole, cioè la squadra campione in carica, e lo ha fatto con il margine più sottile possibile: 70.5 fantapunti contro 64.5, un gol di scarto, uno di quei risultati che si decidono su un voto e mezzo in una domenica qualunque. Il Tettenham ha superato l'Atletico Ziopeiro, detentore della Champions League, per 3-2: 78 a 74.5, con i 17.5 fantapunti di Mastantuono a fare da spartiacque.",
+      "In altre parole, per arrivare a questa finale hanno dovuto eliminare la squadra che ha vinto tutto l'anno scorso e quella che ha vinto la coppa più prestigiosa. Chi arriva a domenica non ci arriva per caso.",
+      "LE SCELTE",
+      "Bacchiega si affida al 4-4-2: Corvi fra i pali, una linea difensiva con Joao Mario, Dimarco, Bisseck e Celik, un centrocampo che mette insieme Diouf, Alajbegovic, Barella e Pulisic, e la coppia Ghedjemis-Douvikas davanti. È una squadra costruita per non concedere niente, con la qualità concentrata nella zona centrale del campo e due punte che si dividono il lavoro.",
+      "Fabbro risponde con il 3-4-3: Butez in porta, difesa a tre con Ostigard, Scalvini e Obert, in mezzo Mastantuono, Gudmundsson, Taylor e Zaniolo, e un tridente pesante formato da Varela, Kean e De Ketelaere. Una scelta di coraggio che punta tutto sul reparto offensivo, con Kean al centro dell'attacco e Mastantuono libero di inventare alle sue spalle.",
+      "Il confronto è dichiarato: quattro contro quattro in mezzo al campo per Bacchiega, tre uomini davanti per Fabbro. Chi difende con più ordine contro chi accetta di scoprirsi per fare un gol in più.",
+      "Una nota che dice molto: Esposito, il ragazzo promosso dal vivaio che alla prima giornata è andato in gol, parte dalla panchina. In una finale si va con le certezze, e a certe mosse si pensa dopo, quando il risultato lo chiede.",
+      "IL RISPETTO",
+      "Sarebbe facile raccontare questa partita come il seguito dell'estate che ha attraversato la lega, con le accuse incrociate dell'asta, il caso Zapata-Elphege e la nota della vicepresidenza che richiamava tutti all'ordine, presidente compreso. Sarebbe facile, e sarebbe sbagliato.",
+      "Perché chi conosce i due sa che il rapporto è un'altra cosa. Sono seduti allo stesso tavolo da dieci anni, hanno scritto insieme il regolamento che ora li giudica, hanno tenuto in piedi la competizione quando qualcuno se ne andava e qualcun altro arrivava. Domenica vorranno vincere entrambi, e lo vorranno con una ferocia che chi ha alle spalle nove stagioni senza scudetto può capire fino in fondo. Ma si stringeranno la mano prima e dopo, e nessuno dei due avrà bisogno di spiegarlo.",
+      "NOVANTA MINUTI E UNA RIGA BIANCA",
+      "Alla fine è tutto qui: due formazioni, undici giocatori ciascuna, una domenica di settembre e una pagina di albo d'oro ancora bianca. Chi vince ci mette il proprio nome per primo, e ce lo lascia per sempre.",
+      "Si gioca domenica. Poi, come sempre, parlerà il campo."
+    ],
+    copertina: { immagine: "assets/img/news/finale-supercoppa.jpg" },
+    inEvidenza: true,
+    demo: false
+  },
+  {
+    slug: "pagelle-giornata-1",
+    titolo: "Mastantuono da 17.5, e il ragazzo del vivaio segna subito",
+    occhiello: "I migliori e i peggiori della prima giornata",
+    autore: "La Redazione",
+    squadra: null,
+    data: "2026-09-17",
+    categoria: "pagelle",
+    tags: ["giornata 1", "pagelle", "giovani"],
+    anteprima: "Diciassette gol, tre squadre a punteggio pieno e un solo punteggio sopra quota 80. Chi ha spostato gli equilibri e chi ha affondato la propria squadra.",
+    corpo: [
+      "La prima giornata ha detto una cosa su tutte: chi aveva costruito bene il centrocampo si è portato a casa il turno. Diciassette gol complessivi, tre squadre a punteggio pieno e distanze minime quasi ovunque, con l\'unico scarto vero nello 0-1 fra Ponferradina e Thorino.",
+      "IL MIGLIORE",
+      "Mastantuono, 8.5 di voto e 17.5 di fantavoto, è stato il giocatore più decisivo della giornata con un margine enorme su tutti gli altri. Un punteggio così vale da solo mezzo risultato, e infatti il Tettenham ha strappato un 3-3 contro gli 81.5 fantapunti dell\'Isagogici Anemoni, il punteggio di squadra più alto del turno.",
+      "IL RAGAZZO",
+      "Il dato che fa più rumore, però, è un altro: Esposito F.P. ha chiuso con 7 di voto e 10 di fantavoto, andando in gol. È il giocatore promosso dal vivaio del Tettenham quest\'estate, quello di cui si era parlato come dell\'acquisto a costo zero dell\'asta. Prima giornata, primo timbro. Chi aveva investito sulle giovanili ha avuto la risposta immediata.",
+      "GLI ALTRI DA TENERE D\'OCCHIO",
+      "Dietro Mastantuono si è messo Coulibaly L. dell\'Isagogici con 13.5, poi Thuram del Thorino a 11, decisivo nell\'unica vittoria di misura del turno. A quota 10.5 Carlos Augusto del Birrareal e Barella del Tune Squad; a 10 Kaiki e Kvernadze della CSM, Pellegrino M. e Malen dell\'Atletico Ziopeiro, Mendy P. del Masterchef United e Ramon del Borussia Pdortmund.",
+      "Da segnalare la prova della CSM, che alla prima assoluta in Farmer League ha vinto 3-2 in trasferta con tre giocatori sopra i 9.5: oltre a Kaiki e Kvernadze, anche Ekkelenkamp e Adams A. hanno spinto i 79 fantapunti che sono valsi la testa della classifica.",
+      "I PEGGIORI",
+      "Serata complicata per i portieri. Martinez Jo. dell\'A.S. Shole ha chiuso a 2, Stankovic F. del Thorino pure a 2 pur vincendo la partita, Maignan dell\'Atletico Ziopeiro a 4.5, Carnesecchi del Birrareal e De Gea della Ponferradina a 4. Ma il conto più salato lo ha pagato Colombo delle Brigate Ebosse: espulso, 2 di fantavoto, e uno 0-0 che pesa.",
+      "UNO SGUARDO AVANTI",
+      "Il prossimo turno vale doppio: oltre alla seconda giornata di campionato si gioca la finale di Supercoppa Farmeriana, che le semifinali hanno assegnato a Tune Squad e Tettenham."
+    ],
+    copertina: { immagine: null },
+    inEvidenza: false,
+    demo: false
+  },
+  {
     slug: "csm-comunicato-ingresso",
     titolo: "«Non siamo qui per partecipare»: la CSM FC si presenta alla lega",
     occhiello: "Il comunicato d'ingresso della neopromossa, alla decima edizione della Farmer League",
@@ -55,7 +120,7 @@ FL.data.news = [
       "Il Presidente, CSM FC"
     ],
     copertina: { immagine: "assets/img/news/csm-comunicato.jpg" },
-    inEvidenza: true,
+    inEvidenza: false,
     demo: false
   },
   {
